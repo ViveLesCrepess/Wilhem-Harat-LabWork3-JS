@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LabWork3</title>
+</head>
+<body>
+    <script>
+        
+        var numOfCourses = prompt("How many courses did you finish : ?", "0");
+        parseInt(numOfCourses);
+        if(isNaN(numOfCourses)){
+            document.write("Invalid input !");
+        }else {
+            var courseMarks = [];
+            var courseMax = 0;
+            var courseAverage = 0;
+            for(var counter = 0; counter < numOfCourses; counter++){
+                courseMarks[counter] = parseFloat(prompt("Enter your mark for course " + " " + (counter+1)));
+                courseMax = courseMax + courseMarks[counter];
+                courseMarks.push(counter);
+            }
+            courseAverage = (courseMax / counter);
+
+
+            for(var i = 0; i < numOfCourses; i++){
+                document.write(courseMarks[i] + "<br>");
+                document.write("<br>");
+            }
+            
+
+            if(courseAverage >= 90 && courseAverage <= 100){
+                document.write("Your final average is " + courseAverage.toFixed(2) + " Your grade is A+");
+            }
+
+            else if(courseAverage >= 80 && courseAverage <= 89){
+                document.write("Your final average is " + courseAverage.toFixed(2) + " Your grade is B");
+            }
+
+            else if(courseAverage >= 70 && courseAverage <= 79){
+                document.write("Your final average is " + courseAverage.toFixed(2) + " Your grade is C");
+            }
+
+            else if(courseAverage >= 60 && courseAverage <= 69){
+                document.write("Your final average is " + courseAverage.toFixed(2) + " Your grade is D");
+            }
+
+            else if(courseAverage < 60 && courseAverage >= 0){
+                document.write("Your final average is " + courseAverage + " Your grade is F");
+            }
+
+            else{
+                document.write("Sorry, All the marks have to be from minimum 0 to maximum 100!");
+            }
+
+        }
+
+
+    </script>
+</body>
+</html>
+
